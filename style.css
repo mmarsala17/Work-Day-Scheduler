@@ -22,11 +22,11 @@ body {
     border-bottom: 10px solid green;
   }
   
-  .description{
+  .info{
     white-space: pre-wrap;
   }
   
-  .time-block{
+  .hour{
     text-align: left;
     border-radius: 15px;
   }
@@ -37,7 +37,7 @@ body {
     border-top: 1px solid white;;
   }
   
-  .hour {
+  .time {
     background-color: #ffffff;
     color: #000000;
     border-top: 1px dashed #000000;
@@ -58,15 +58,15 @@ body {
     color: white;
   }
   
-  .saveBtn {
+  .bookmarkBtn {
     border-left: 1px solid black;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: grey;
+    background-color: red;
     color: white;
   }
   
-  .saveBtn i:hover {
+  .bookmarkBtn i:hover {
     font-size: 20px;
     transition: all .3s ease-in-out;
   }

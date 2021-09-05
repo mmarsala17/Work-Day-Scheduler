@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    // present time
+
     $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a"));
 
     $(".bookmarkBtn").on("click", function () {
@@ -11,24 +13,15 @@ $(document).ready(function () {
         localStorage.setItem(description, hours);
     })
 
-    $("#8am .info").val(localStorage.getItem("8am"));
-    $("#9am .info").val(localStorage.getItem("9am"));
-    $("#10am .info").val(localStorage.getItem("10am"));
-    $("11am .info").val(localStorage.getItem("11am"));
-    $("12pm .info").val(localStorage.getItem("12pm"));
-    $("1pm .info").val(localStorage.getItem("1pm"));
-    $("2pm .info").val(localStorage.getItem("2pm"));
-    $("3pm .info").val(localStorage.getItem("3pm"));
-    $("4pm .info").val(localStorage.getItem("4pm"));
-    $("5pm .info").val(localStorage.getItem("5pm"));
-
     function timeMemory() {
         var presentTime = moment().hour();
 
         $(".hour").each(function() {
             var timeDisp = parseInt($(this).attr("id").split("hour")[1]);
             console.log( timeDisp, presentTime)
-            
+
+            // setting a loop for color coding blocks
+
             if (timeDisp < presentTime) {
                 $(this).addClass("past");
                 $(this).removeClass("future");
@@ -46,6 +39,22 @@ $(document).ready(function () {
             }
 
         })
+
+        // gathering previously stored time
+
+    $("#8am .info").val(localStorage.getItem("8am"));
+    $("#9am .info").val(localStorage.getItem("9am"));
+    $("#10am .info").val(localStorage.getItem("10am"));
+    $("11am .info").val(localStorage.getItem("11am"));
+    $("12pm .info").val(localStorage.getItem("12pm"));
+    $("1pm .info").val(localStorage.getItem("1pm"));
+    $("2pm .info").val(localStorage.getItem("2pm"));
+    $("3pm .info").val(localStorage.getItem("3pm"));
+    $("4pm .info").val(localStorage.getItem("4pm"));
+    $("5pm .info").val(localStorage.getItem("5pm"));
+
     }
+
     timeMemory();
+    
 })
